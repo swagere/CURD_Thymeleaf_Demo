@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<title>regist</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -71,8 +71,9 @@
 							<tr>
 								<td valign="middle" align="right">
 									验证码:
-									<img id="num" src="image" />
-									<a href="javascript:" onclick="document.getElementById('num').src = 'image?'+(new Date()).getTime()">换一张</a>
+									<img id="num" th:src="@{user/code}" />
+									<!--																			随机戳，防止浏览器缓存-->
+									<a href="javascript:" onclick="document.getElementById('num').src = '/user/code?'+(new Date()).getTime()">换一张</a>
 								</td>
 								<td valign="middle" align="left">
 									<input type="text" class="inputgri" name="number" />
