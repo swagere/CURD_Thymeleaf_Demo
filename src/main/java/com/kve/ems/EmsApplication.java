@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
 @SpringBootApplication
-@MapperScan("com.kev.dao") //扫描所有dao接口
+@MapperScan("com.kve.ems.dao") //扫描所有dao接口
 public class EmsApplication extends WebMvcConfigurationSupport {
 
     public static void main(String[] args) {
