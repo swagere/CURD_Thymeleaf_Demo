@@ -67,7 +67,7 @@
 								<span th:text="${#dates.format(emp.bir,'yyyy-MM-dd')}"/>
 							</td>
 							<td>
-								<a href="empList.html">delete emp</a>&nbsp;<a href="updateEmp.html">update emp</a>
+								<a th:href="@{/emp/delete(id=${emp.id})}">delete emp</a>&nbsp;<a href="updateEmp.html">update emp</a>
 							</td>
 						</tr>
 					</table>

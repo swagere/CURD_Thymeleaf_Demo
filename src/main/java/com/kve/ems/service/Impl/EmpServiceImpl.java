@@ -29,4 +29,9 @@ public class EmpServiceImpl implements EmpService {
         empDAO.save(emp);
     }
 
+    @Override
+    public void delete(String id) {
+        empDAO.delete(id);
+    }
+
 }

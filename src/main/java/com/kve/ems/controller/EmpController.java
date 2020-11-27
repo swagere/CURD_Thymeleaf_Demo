@@ -39,4 +39,16 @@ public class EmpController {
         empService.save(emp);
         return "redirect:/emp/findAll";
     }
+
+    /**
+     * 删除员工信息
+     * @param id
+     * @return
+     */
+    @GetMapping("/delete")
+    public String delete(String id) {
+        empService.delete(id);
+//        return "empList"; 如果直接跳转到页面，则不会对列表发起请求，即返回到原页面没有任何查询值（因为原页面本身就是一个接收页面，不会发起请求）
+        return "redirect:/emp/findAll";
+    }
 }

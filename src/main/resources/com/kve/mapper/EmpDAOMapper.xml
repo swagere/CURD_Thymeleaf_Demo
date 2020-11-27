@@ -7,7 +7,12 @@
     </select>
 
     <!--增加员工-->
-    <select id="save" resultType="com.kve.ems.entity.Emp">
+    <insert id="save" parameterType="com.kve.ems.entity.Emp">
         insert into t_emp values(#{id},#{name},#{salary},#{age},#{bir})
-    </select>
+    </insert>
+
+    <!--删除员工-->
+    <delete id="delete" parameterType="String">
+        delete from t_emp where id=#{id}
+    </delete>
 </mapper>
