@@ -13,7 +13,6 @@ import javax.imageio.ImageIO;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
@@ -57,5 +56,21 @@ public class UserController {
         //响应图片，输出到前端
         ServletOutputStream os = response.getOutputStream();
         ImageIO.write(image,"png", os);
+    }
+
+    /**
+     * 登陆方法
+     * @param username
+     * @param password
+     * @return
+     */
+    public String login(String username, String password) {
+        User login = userService.login(username, password);
+        if (login != null) {
+            return "redirect:/emp/findAll";  //跳转到查询所有
+        }
+        else {
+            return "redirect:/index";  //跳转回到登陆控制器
+        }
     }
 }
