@@ -64,6 +64,7 @@ public class UserController {
      * @param password
      * @return
      */
+    @PostMapping("/login")
     public String login(String username, String password) {
         User login = userService.login(username, password);
         if (login != null) {
