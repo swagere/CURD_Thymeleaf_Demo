@@ -65,9 +65,10 @@ public class UserController {
      * @return
      */
     @PostMapping("/login")
-    public String login(String username, String password) {
+    public String login(String username, String password, HttpSession session) {
         User login = userService.login(username, password);
         if (login != null) {
+            session.setAttribute("user", login);
             return "redirect:/emp/findAll";  //跳转到查询所有
         }
         else {
