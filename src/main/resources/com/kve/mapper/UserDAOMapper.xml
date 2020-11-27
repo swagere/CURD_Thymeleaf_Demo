@@ -7,7 +7,7 @@
     </insert>
 
     <!--登陆方法的实现-->
-    <select id="login" resultType="User">
+    <select id="login" resultType="com.kve.ems.entity.User">
         select id,username,realname,password,sex from t_user
         where username=#{username} and password=#{password}
     </select>
