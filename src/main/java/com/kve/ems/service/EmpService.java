@@ -10,4 +10,8 @@ public interface EmpService {
     void save(Emp emp);
 
     void delete(String id);
+
+    Emp find(String id);
+
+    void update(Emp emp);
 }

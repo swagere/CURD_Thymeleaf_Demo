@@ -15,4 +15,15 @@
     <delete id="delete" parameterType="String">
         delete from t_emp where id=#{id}
     </delete>
+
+    <!--根据id查询员工-->
+    <select id="find" parameterType="String" resultType="com.kve.ems.entity.Emp">
+        select id,name,salary,age,bir from t_emp where id=#{id}
+    </select>
+
+    <!--更新员工信息-->
+    <update id="update" parameterType="com.kve.ems.entity.Emp">
+        update t_emp set name=#{name},salary=#{salary},age=#{age},bir=#{bir}
+        where id = #{id}
+    </update>
 </mapper>

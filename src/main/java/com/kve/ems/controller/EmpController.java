@@ -51,4 +51,27 @@ public class EmpController {
 //        return "empList"; 如果直接跳转到页面，则不会对列表发起请求，即返回到原页面没有任何查询值（因为原页面本身就是一个接收页面，不会发起请求）
         return "redirect:/emp/findAll";
     }
+
+    /**
+     * 根据id查询员工信息
+     * @param id
+     * @return
+     */
+    @GetMapping("/find")
+    public String find(String id, Model model) {
+        Emp emp = empService.find(id);
+        model.addAttribute("emp", emp);
+        return "updateEmp";
+    }
+
+    /**
+     * 更新员工信息
+     * @param emp
+     * @return
+     */
+    @PostMapping("/update")
+    public String update(Emp emp) {
+        empService.update(emp);
+        return "redirect:/emp/findAll";
+    }
 }
