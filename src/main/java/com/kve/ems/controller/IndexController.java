@@ -22,4 +22,13 @@ public class IndexController {
     public String toRegister(){
         return "register";
     }
+
+    /**
+     * 添加员工控制器
+     * @return
+     */
+    @GetMapping("/toSave")
+    public String toSave(){
+        return "addEmp";
+    }
 }
